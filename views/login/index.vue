@@ -60,7 +60,7 @@ export default {
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        //callback(new Error('Please enter the correct user name'))
+        // callback(new Error('Please enter the correct user name'))
         callback()
       } else {
       }
@@ -94,6 +94,9 @@ export default {
       immediate: true
     }
   },
+  mounted() {
+    // console.log(this.loginForm)
+  },
   methods: {
     showPwd() {
       if (this.passwordType === 'password') {
@@ -115,22 +118,19 @@ export default {
           // }).catch(() => {
           //   this.loading = false
           // })
-					this.$store.dispatch('user/login', this.loginForm).then(() => {
+          this.$store.dispatch('user/login', this.loginForm).then(() => {
 					  this.$router.push({ path: this.redirect || '/' })
 					  this.loading = false
-					}).catch(() => {
+          }).catch(() => {
 					  this.loading = false
-					})
+          })
         } else {
           console.log('error submit!!')
           return false
         }
       })
     }
-  },
-	mounted () {
-		//console.log(this.loginForm)
-	}
+  }
 }
 </script>
 

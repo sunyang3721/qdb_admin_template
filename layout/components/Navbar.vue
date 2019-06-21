@@ -7,7 +7,7 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <span class="user-avatar fa fa-user"></span> <b>{{name}}</b>
+          <span class="user-avatar fa fa-user" /> <b>{{ name }}</b>
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
@@ -44,7 +44,7 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-			'name'
+      'name'
     ])
   },
   methods: {
@@ -117,12 +117,12 @@ export default {
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
-				b{font-size: 16px;position: relative;bottom:8px;cursor: pointer}
+				b{font-size: 14px;position: relative;bottom:5px;cursor: pointer}
         .user-avatar {
           cursor: pointer;
           width: 40px;
           height: 40px;
-          font-size:40px;
+          font-size:30px;
           text-align:right;
           border-radius: 10px;
         }

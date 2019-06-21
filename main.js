@@ -12,7 +12,7 @@ import App from './App'
 import store from './store'
 import router from './router'
 
-//跨域问题
+// 跨域问题
 import axios from 'axios'
 Vue.prototype.$axios = axios
 import qs from 'qs'
@@ -36,7 +36,7 @@ Vue.prototype.$qs = qs
 //         console.log('响应出错')
 //         return Promise.reject(error)
 //       })
-//     
+//
 
 import '@/icons' // icon
 import '@/permission' // permission control 权限控制
@@ -57,17 +57,17 @@ import '@/permission' // permission control 权限控制
 // set ElementUI lang to EN
 Vue.use(ElementUI, { locale })
 
-Vue.config.productionTip = true
+Vue.config.productionTip = false
 Vue.directive('loadmore', {
   bind(el, binding) {
-	const selectWrap = el.querySelector('.el-table__body-wrapper')
-	selectWrap.addEventListener('scroll', function() {
-	  let sign = 0
-	  const scrollDistance = this.scrollHeight - this.scrollTop - this.clientHeight
-	  if (scrollDistance <= sign) {
-		binding.value()
-	  }
-	})
+    const selectWrap = el.querySelector('.el-table__body-wrapper')
+    selectWrap.addEventListener('scroll', function() {
+      const sign = 0
+      const scrollDistance = this.scrollHeight - this.scrollTop - this.clientHeight
+      if (scrollDistance <= sign) {
+        binding.value()
+      }
+    })
   }
 })
 

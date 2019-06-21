@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       title: 'Amplifi',
-      logo: require('../../../assets/404_images/404.png')
+      logo: require('../../../assets/logo.png')
     }
   }
 }
@@ -55,7 +55,7 @@ export default {
     width: 100%;
 
     & .sidebar-logo {
-      width: 32px;
+      width: 45px;
       height: 32px;
       vertical-align: middle;
       margin-right: 12px;

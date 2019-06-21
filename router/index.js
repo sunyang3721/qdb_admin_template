@@ -33,7 +33,7 @@ import Layout from '@/layout'
 export const constantRoutes = [
   {
     path: '/login',
-		name: 'login',
+    name: 'login',
     component: () => import('@/views/login/index'),
     hidden: true
   },
@@ -65,9 +65,9 @@ export const constantRoutes = [
       path: 'dashboard',
       name: 'dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '主页', icon: 'example' },
+      meta: { title: '主页', icon: 'example' }
     }],
-    hidden:true
+    hidden: true
   },
 
   {
@@ -115,6 +115,69 @@ export const constantRoutes = [
   },
 
   {
+    path: '/example3',
+    component: Layout,
+    redirect: '/example3/report/3',
+    name: '户外',
+    meta: { title: '户外', icon: 'example' },
+    children: [
+      {
+        path: 'report/3',
+        name: '户外-数据表',
+        component: () => import('@/views/report/index'),
+        meta: { title: '数据表', icon: 'table' }
+      },
+      {
+        path: 'echarts/3',
+        name: '户外-分析图',
+        component: () => import('@/views/echarts/index'),
+        meta: { title: '分析图', icon: 'tongji' }
+      }
+    ]
+  },
+	{
+	  path: '/example4',
+	  component: Layout,
+	  redirect: '/example4/report/4',
+	  name: '报纸杂志',
+	  meta: { title: '报纸杂志', icon: 'example' },
+	  children: [
+	    {
+	      path: 'report/4',
+	      name: '报纸杂志-数据表',
+	      component: () => import('@/views/report/index'),
+	      meta: { title: '数据表', icon: 'table' }
+	    },
+	    {
+	      path: 'echarts/4',
+	      name: '报纸杂志-分析图',
+	      component: () => import('@/views/echarts/index'),
+	      meta: { title: '分析图', icon: 'tongji' }
+	    }
+	  ]
+	},
+	{
+	  path: '/example5',
+	  component: Layout,
+	  redirect: '/example5/report/5',
+	  name: '电台广播',
+	  meta: { title: '电台广播', icon: 'example' },
+	  children: [
+	    {
+	      path: 'report/5',
+	      name: '电台广播-数据表',
+	      component: () => import('@/views/report/index'),
+	      meta: { title: '数据表', icon: 'table' }
+	    },
+	    {
+	      path: 'echarts/5',
+	      name: '电台广播-分析图',
+	      component: () => import('@/views/echarts/index'),
+	      meta: { title: '分析图', icon: 'tongji' }
+	    }
+	  ]
+	},
+  {
     path: '/form',
     component: Layout,
     children: [
@@ -125,7 +188,7 @@ export const constantRoutes = [
         meta: { title: 'Form', icon: 'form' }
       }
     ],
-    hidden:true
+    hidden: true
   },
 
   {
@@ -184,7 +247,7 @@ export const constantRoutes = [
         meta: { title: 'menu2' }
       }
     ],
-    hidden:true
+    hidden: true
   },
 
   {
@@ -196,7 +259,7 @@ export const constantRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ],
-    hidden:true
+    hidden: true
   },
 
   // 404 page must be placed at the end !!!

@@ -1,27 +1,27 @@
 <template>
-  <div class="app-container" v-loading="listLoading">
-		<router-link to="/form/index">测试跳转 </router-link>
-		<el-col :span="24">
-		    <h3>{{title}}<hr></h3>
-		</el-col>
+  <div v-loading="listLoading" class="app-container">
+    <router-link to="/form/index">测试跳转 </router-link>
+    <el-col :span="24">
+      <h3>{{ title }}<hr></h3>
+    </el-col>
     <section class="chart-container">
-        <el-row>
-            <el-col :span="24">
-                <div id="chartColumn" style="width:100%; height:400px;"></div>
-            </el-col>
-            <el-col :span="24">
-                <div id="chartBar" style="width:100%; height:400px;"></div>
-            </el-col>
-            <el-col :span="24">
-                <div id="chartLine" style="width:100%; height:400px;"></div>
-            </el-col>
-            <el-col :span="24">
-                <div id="chartPie" style="width:100%; height:400px;"></div>
-            </el-col>
-            <el-col :span="24">
-                <a href="http://echarts.baidu.com/examples.html" target="_blank" style="float: right;">more>></a>
-            </el-col>
-        </el-row>
+      <el-row>
+        <el-col :span="24">
+          <div id="chartColumn" style="width:100%; height:400px;" />
+        </el-col>
+        <el-col :span="24">
+          <div id="chartBar" style="width:100%; height:400px;" />
+        </el-col>
+        <el-col :span="24">
+          <div id="chartLine" style="width:100%; height:400px;" />
+        </el-col>
+        <el-col :span="24">
+          <div id="chartPie" style="width:100%; height:400px;" />
+        </el-col>
+        <el-col :span="24">
+          <a href="http://echarts.baidu.com/examples.html" target="_blank" style="float: right;">more>></a>
+        </el-col>
+      </el-row>
     </section>
   </div>
 </template>
@@ -49,16 +49,22 @@ export default {
       chartPie: null
     }
   },
-  created() {
-    
+  computed: {
+    title: function() {
+      return this.$route.name
+    }
   },
-	computed: {
-		title: function() {
-			return this.$route.name
-		}
-	},
+  created() {
+
+  },
+  mounted: function() {
+    this.drawCharts()
+  },
+  updated: function() {
+    this.drawCharts()
+  },
   methods: {
-    drawColumnChart () {
+    drawColumnChart() {
       this.chartColumn = echarts.init(document.getElementById('chartColumn'))
       this.chartColumn.width = '200'
       this.chartColumn.setOption({
@@ -75,7 +81,7 @@ export default {
         }]
       })
     },
-    drawBarChart () {
+    drawBarChart() {
       this.chartBar = echarts.init(document.getElementById('chartBar'))
       this.chartBar.setOption({
         title: {
@@ -119,7 +125,7 @@ export default {
         ]
       })
     },
-    drawLineChart () {
+    drawLineChart() {
       this.chartLine = echarts.init(document.getElementById('chartLine'))
       this.chartLine.setOption({
         title: {
@@ -167,7 +173,7 @@ export default {
         ]
       })
     },
-    drawPieChart () {
+    drawPieChart() {
       this.chartPie = echarts.init(document.getElementById('chartPie'))
       this.chartPie.setOption({
         title: {
@@ -208,18 +214,12 @@ export default {
         ]
       })
     },
-    drawCharts () {
+    drawCharts() {
       this.drawColumnChart()
       this.drawBarChart()
       this.drawLineChart()
       this.drawPieChart()
     }
-  },
-  mounted: function () {
-    this.drawCharts()
-  },
-  updated: function () {
-    this.drawCharts()
   }
 }
 </script>

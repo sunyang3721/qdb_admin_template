@@ -67,15 +67,15 @@ const actions = {
   logout({ commit, state }) {
     return new Promise((resolve, reject) => {
 			MessageBox.confirm('确定退出?', {
-			  confirmButtonText: '确定',
-			  cancelButtonText: '取消',
-			  type: 'warning'
-			}).then(() => {
-				removeToken()
-				resetRouter()
-				commit('SET_TOKEN', '')
-				location.reload()
-			})
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        removeToken()
+        resetRouter()
+        commit('SET_TOKEN', '')
+        location.reload()
+      })
 					
 					
     //   logout(state.token).then(() => {

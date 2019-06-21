@@ -4,8 +4,8 @@ export function login(data) {
   return request({
     url: '/qdb/loginUser.do',
     method: 'post',
-		headers: {
-        'Content-type': 'application/x-www-form-urlencoded'
+    headers: {
+      'Content-type': 'application/x-www-form-urlencoded'
     },
     params: data
   })
